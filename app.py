@@ -13,7 +13,9 @@ VERIFY_TOKEN = 'REDACTED'
 bot = Bot(ACCESS_TOKEN)
 
 
+
 @app.route('/', methods=['GET', 'POST'])
+
 #Handle requests sent to endpoint
 def receiveMessage():
     if request.method == 'GET':
@@ -43,7 +45,6 @@ def receiveMessage():
                             response, link = getResponse(received, user_details, user_id)
                             sendMessage(user_id, response, link)
     return ""
-
 
 #Ensures request has the correct token
 def verifyFbToken(token_sent):
@@ -125,7 +126,7 @@ def getResponse(received, user_details, user_id):
 
 #Fetch meme from randomly chosen API
 def getMeme():
-    meme_sites = ["https://meme-api.glitch.me/moderate", "https://meme-api.glitch.me/light", "https://meme-api.glitch.me/dank"]
+    meme_sites = ["https://meme-api.glitch.me/moderate", "https://meme-api.glitch.me/sbubby"]
     link = random.choice(meme_sites)
     data = requests.get(link).content
     return json.loads(data.decode())['meme']
@@ -165,10 +166,10 @@ def getNovaOffers():
     page = urllib.request.urlopen(url)
     parse = bs(page, 'lxml')
     response = ""
-    for cont in parse.findAll("div", {"class": "_1e4fOW6b78"}):
-        for a in cont.findAll("a", href=True):
-            for h2 in a.findAll("h2"):
-                response += h2.text + " (www.nova.is" + a['href'] + ")\n\n"
+    for a in parse.findAll("div", {"class": "_1e4fOW6b78"})[0].findAll("a", href=True):
+        for h2 in a.findAll("h2"):
+            response += h2.text + " (www.nova.is" + a['href'] + ")\n\n"
+                
     return response[:-2]
 
 
