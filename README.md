@@ -8,6 +8,6 @@ The functionalities include:
   * Roast: Fetches a "roast" from a roast API and adds the user's name to it. A roast is a joke revolved around critizising someone, often in a ridicilous/funny way.
   * Compliment: If the roast is bad you can get relief from the compliment menu. It also connects to an API and compliments you in some way.
 * Offers right now menu:
-  * Happy hours: Tells you where there is happy hour right now. This data is scraped from www.happyhour.is
+  * Happy hours: Tells you where there is happy hour right now. This data is scraped from www.happyhour.is.
   * Nova 2 for 1 offers: Tells you what Nova 2 for 1 offers are going on right now. This data is scraped from www.nova.is/dansgolfid/2fyrir1.
-  * Cheapest gas: Tells you the top 10 cheapest gas stations and their prices. This data is fetched through an api from www.apis.is
+  * Cheapest gas: Tells you the top 10 cheapest gas stations and their prices. This data is fetched through an api from www.apis.is.
